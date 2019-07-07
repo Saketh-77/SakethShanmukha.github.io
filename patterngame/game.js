@@ -10,7 +10,7 @@ $(document).on("keypress", function () {
   counter += 1;
 })
 
-$(document).on("ontouchend", function (){
+$(document).on("tap", function (){
   if(counter===0){
     nextSequence();
   }
