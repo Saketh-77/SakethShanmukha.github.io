@@ -10,6 +10,12 @@ $(document).on("keypress", function () {
   counter += 1;
 })
 
+$(document).on("ontouchend", function (){
+  if(counter===0){
+    nextSequence();
+  }
+})
+
 function winCheck(currentLevel) {
   if (gamePattern[currentLevel] !== userClickedPattern[currentLevel]) {
     gameOn = false;
