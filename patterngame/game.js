@@ -10,11 +10,12 @@ $(document).on("keypress", function () {
   counter += 1;
 })
 
-$(document).on("tap", function (){
+function mobileStart(){
   if(counter===0){
     nextSequence();
+    counter += 1;
   }
-})
+}
 
 function winCheck(currentLevel) {
   if (gamePattern[currentLevel] !== userClickedPattern[currentLevel]) {
