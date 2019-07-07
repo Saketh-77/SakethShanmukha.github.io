@@ -1,0 +1,103 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>CreditCard Validation</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <button class="btn refresh">
+            <a href="index.html" style="text-decoration: none;">Refresh</a>
+        </button>
+        <form>
+                <div class="form-group">
+                    <div class="container-fluid box-container">
+                            <h4 class="card-number-box">Enter your credit card number</h4>
+                            <div class="row justify-content-md-center">
+                                    <input type="text" class="form-control col col-lg-1" id="cardInput1" aria-describedby="emailHelp" placeholder="XXXX" autofocus="autofocus">
+                                    <input type="text" class="form-control col col-lg-1" id="cardInput2" aria-describedby="emailHelp" placeholder="XXXX" disabled>
+                                    <input type="text" class="form-control col col-lg-1" id="cardInput3" aria-describedby="emailHelp" placeholder="XXXX" disabled>
+                                    <input type="text" class="form-control col col-lg-1" id="cardInput4" aria-describedby="emailHelp" placeholder="XXXX" disabled>
+                            </div>
+                            <!-- <button id="doll" onclick="validateCard()">Validate</button> -->
+                    </div>
+                    
+                    <small id="validatorTrustInfo" class="form-text text-muted">We'll never share your details with anyone else.</small>
+                </div>
+        </form>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        var num,numArray=[],vendor,result;
+        function computeVendor(numberString){
+            var checkNumber = numberString.substring(0,4);
+            if(['1800','2131','3333'].includes(checkNumber)){
+                vendor="JCB";
+            }
+            else if(['2014','2149'].includes(checkNumber)){
+                vendor="Diner's Club/ enRoute"
+            }
+            else if(checkNumber.substring(0,2)==="38" || [300,301,302,303,304,305].includes(Number(checkNumber.substring(0,3)))){
+                vendor="Diner's Club/ CarteBlanche";
+            }
+            else if(checkNumber.substring(0,2)==="36"){
+                vendor="Diner's Club/ International";
+            }
+            else if(checkNumber.substring(0,2)==="34" || checkNumber.substring(0,2)==="37"){
+                vendor="American Express";
+            }
+            else if(checkNumber==="6011"){
+                vendor="Discover";
+            }
+            else if(checkNumber[0]==="4"){
+                vendor="Visa";
+            }
+            else if([51,52,53,54,55].includes(Number(checkNumber.substring(0,2)))){
+                vendor="MasterCard";
+            }
+            
+        }
+        function validate(value) {
+                // The Luhn Algorithm. It's so pretty.
+                var nCheck = 0, nDigit = 0, bEven = false;
+                //   value = value.replace(/\D/g, "");
+                for (var n = value.length - 1; n >= 0; n--) {
+                    var cDigit = value.charAt(n),
+                        nDigit = parseInt(cDigit, 10);
+
+                    if (bEven) {
+                        if ((nDigit *= 2) > 9) nDigit -= 9;
+                    }
+
+                    nCheck += nDigit;
+                    bEven = !bEven;
+                }
+                if((nCheck % 10) == 0){
+                    result = "Yes ! It is VALID card";
+                }
+                else{
+                    result = "OOPS ! It is NOT a valid card";
+                }
+        }
+        function validateCard(numberString){
+            computeVendor(numberString);
+            validate(numberString);
+            setTimeout(function(){
+                alert(result);
+            },10);
+        }
+        let cardNumber = '';
+        $("input").on("input",function(event){
+            let localString = $(this).val();
+            if(localString.length === 4) {
+                cardNumber = cardNumber.concat(localString);
+                $(this).next().removeAttr("disabled");
+                $(this).next().focus();
+                $(this).attr("disabled","disabled");
+            }
+            if(cardNumber.length===16){
+                validateCard(cardNumber);
+            }
+        });
+    </script>
+</html>

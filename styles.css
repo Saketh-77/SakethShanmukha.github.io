@@ -1,0 +1,38 @@
+.form-group{
+    text-align: center;
+}
+.box-container{
+    padding: 20%;
+}
+.card-number-box {
+    padding-bottom: 2%;
+}
+body{
+    background-image: url(https://images.wallpaperscraft.com/image/bank_card_money_hand_79244_1366x768.jpg);
+    background-size: 100% 100%;
+    position: relative;
+}
+#validatorTrustInfo{
+    color: #064acb;
+}
+
+.refresh {
+    border-color: #064acb;
+    position: absolute;
+    top: 5%;
+    left: 4%;
+}
+
+.refresh:hover{
+    background: #e7e7e7;
+}
+
+.btn {
+    border-radius: 40%;
+    border: 2px solid #064acb;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+  }
