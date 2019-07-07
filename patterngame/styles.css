@@ -1,0 +1,98 @@
+body {
+  text-align: center;
+  background-color: #011F3F;
+  margin: 0%;
+}
+.fas{
+  font-family: 'Gloria Hallelujah', cursive;
+  width: 30%;
+  position: absolute;
+  left: 35%;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+.fas:hover {
+  color: #f2f4f6;
+}
+.button-refresh {
+	-moz-box-shadow: 0px 0px 0px 0px #9fb4f2;
+	-webkit-box-shadow: 0px 0px 0px 0px #9fb4f2;
+	box-shadow: 0px 0px 0px 0px #9fb4f2;
+	background-color:transparent;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+}
+.button-refresh:hover {
+  background-color:white;
+  color: #107595;
+  transition-duration: 0.4s;
+}
+.button-refresh:active {
+	position:relative;
+	top:1px;
+}
+
+  
+} 
+.end{
+  position: relative;
+  background-color: #b2d3be;
+  padding: 3% 5% 5%;
+}
+#level-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  margin:  5%;
+  color: #FEF2BF;
+}
+
+.container {
+  display: block;
+  width: 50%;
+  margin: auto;
+
+}
+
+.btn {
+  margin: 25px;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border: 10px solid black;
+  border-radius: 20%;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
