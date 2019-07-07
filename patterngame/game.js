@@ -4,7 +4,10 @@ var randomChosenColor, gamePattern = [],
 var level = 0, counter = 0;
 let gameOn = true;
 $(document).on("keypress", function () {
-  nextSequence();
+  if(counter===0){
+    nextSequence();
+  }
+  counter += 1;
 })
 
 function winCheck(currentLevel) {
