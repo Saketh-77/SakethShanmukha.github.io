@@ -96,31 +96,3 @@ body {
   box-shadow: 0 0 20px white;
   background-color: grey;
 }
-
-@media (max-width: 1024px){
-  .green{
-    position: absolute;
-    left: 20%;
-    top: 20%;
-  }
-  .yellow{
-    position: absolute;
-    left: 20%;
-    top: 35%;
-  }
-  .red{
-    position: absolute;
-    right: 20%;
-    top: 20%;
-  }
-  .blue{
-    position: absolute;
-    top: 35%;
-    right: 20%;
-  }
-  .button-refresh{
-    position: absolute;
-    top: 50%;
-    left: 43%;
-  }
-}
