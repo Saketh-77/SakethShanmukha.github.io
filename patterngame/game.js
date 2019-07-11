@@ -66,8 +66,12 @@ $("div.btn").on("click", function () {
   winCheck(userIndex);
 
 })
-
+var gameover_sound = new Audio("patterngame/sounds/wrong.mp3");
 function gameOver() {
+  gameover_sound.play();
   $("body").addClass("game-over");
-  $("#level-title").text("GAME OVER !!");
+  setTimeout(function(){
+    $("body").removeClass("game-over");
+  },200);
+  $("#level-title").text("GAME OVER !! Click the refresh button to restart.");
 }
